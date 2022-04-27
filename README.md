@@ -1,6 +1,9 @@
+# BloodDonationBarometer
+
 ![stars](https://img.shields.io/github/stars/dusselmann/BloodDonationBarometer) ![last_commit](https://img.shields.io/github/last-commit/dusselmann/BloodDonationBarometer)
 
-# BloodDonationBarometer
+<img src="https://github.com/dusselmann/BloodDonationBarometer/blob/main/screenshot.jpeg?raw=true" alt="" width=340 align="right"/> 
+
 A <a href="https://scriptable.app">Scriptable</a> widget for iOS, which shows the so called Blood Donation Barometer [Blutspende-Barometer] for the German Red Cross [Deutsches Rotes Kreuz: DRK].
 
 The widget pulls data from one of the DRK website every 4-7 minutes. This is triggered by iOS and can not be changed. Currently the northwest from the DRK regions is supported - more to come. 
