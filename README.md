@@ -37,7 +37,7 @@ The widget currently supports 3 regional German red cross entities:
   nordostschweiz      Nordostschweiz
   svizzera_italiana   Svizzera italiana
   zentralschweiz      Zentralschweiz
-  zuerich.            Zürich
+  zuerich             Zürich
 ```
 You need to choose one of the entities above; example: `parameter: irb`
 
