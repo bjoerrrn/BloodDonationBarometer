@@ -23,7 +23,7 @@ bwh    DRK-Blutspendedienst Baden-Württemberg, Hessen
 You need to choose one of the entities above; example: `parameter: no`
 
 # coming soon
-* Blutspende SRK Schweiz
+* Blutspende SRK Schweiz incl. regional barometers!
 * proper formatting of status date
 
 ## contributing
