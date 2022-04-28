@@ -4,7 +4,7 @@
 
 // Licence: GPL-3.0 License https://github.com/bjoerrrn/BloodDonationBarometer/blob/main/LICENSE
 // Source: https://github.com/bjoerrrn/BloodDonationBarometer
-// Version: 0.1.4
+// Version: 0.1.5
 
 
 let rk={};
@@ -26,7 +26,7 @@ rk.irb.url                  = `https://www.blutspende.ch/de/spenderinfos/warum-b
 rk.irb.lbl                  = "SRK 🇨🇭 Interregional"
 rk.aargau_solothurn={};
 rk.aargau_solothurn.url     = `https://www.blutspende.ch/de/spenderinfos/warum-blut-spenden/blutgruppenbarometer`
-rk.aargau_solothurn.lbl     = "SRK 🇨🇭 Aagrau - Solothurn"
+rk.aargau_solothurn.lbl     = "SRK 🇨🇭 Aargau-Solothurn"
 rk.basel={};
 rk.basel.url                = `https://www.blutspende.ch/de/spenderinfos/warum-blut-spenden/blutgruppenbarometer`
 rk.basel.lbl                = "SRK 🇨🇭 Basel"
