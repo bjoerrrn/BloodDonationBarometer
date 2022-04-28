@@ -6,7 +6,7 @@
 
 A <a href="https://scriptable.app">Scriptable</a> widget for iOS, which shows the so called Blood Donation Barometer [Blutspende-Barometer] for the German Red Cross [Deutsches Rotes Kreuz: DRK].
 
-The widget pulls data from one of the DRK website every 4-7 minutes. This is triggered by iOS and can not be changed. Currently the northwest from the DRK regions is supported - more to come. 
+The widget pulls data from one of the DRK and SRK website every 4-7 minutes. This is triggered by iOS and can not be changed.
 
 # setup
 1. Install <a href="https://scriptable.app">Scriptable</a> on your iPhone from the App Store.
