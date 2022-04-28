@@ -22,6 +22,9 @@ bwh    DRK-Blutspendedienst Baden-Württemberg, Hessen
 ```
 You need to choose one of the entities above; example: `parameter: no`
 
+# coming soon
+* Blutspende SRK Schweiz
+
 ## contributing
 
 [issues](https://github.com/dusselmann/BloodDonationBarometer/issues) and [pull requests](https://github.com/dusselmann/BloodDonationBarometer/pulls) are welcome. for major changes, please open an [issue](https://github.com/dusselmann/BloodDonationBarometer/issues) first to discuss what you would like to change.
