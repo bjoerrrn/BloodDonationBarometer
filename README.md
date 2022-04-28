@@ -2,7 +2,7 @@
 
 ![stars](https://img.shields.io/github/stars/dusselmann/BloodDonationBarometer) ![last_commit](https://img.shields.io/github/last-commit/dusselmann/BloodDonationBarometer)
 
-<img src="https://github.com/dusselmann/BloodDonationBarometer/blob/main/SCREEN.jpeg?raw=true" alt="" width=340 align="right"/> 
+<img src="https://github.com/dusselmann/BloodDonationBarometer/blob/main/SCREEN.jpeg?raw=true" alt="" width=250 align="right"/> 
 
 A <a href="https://scriptable.app">Scriptable</a> widget for iOS, which shows the so called Blood Donation Barometer [Blutspende-Barometer] for the German Red Cross [Deutsches Rotes Kreuz: DRK].
 
