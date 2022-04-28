@@ -4,7 +4,7 @@
 
 // Licence: GPL-3.0 License https://github.com/bjoerrrn/BloodDonationBarometer/blob/main/LICENSE
 // Source: https://github.com/bjoerrrn/BloodDonationBarometer
-// Version: 0.1.2
+// Version: 0.1.4
 
 
 let rk={};
@@ -36,9 +36,9 @@ rk.fribourg.lbl             = "SRK 🇨🇭 Freiburg"
 rk.geneve={};
 rk.geneve.url               = `https://www.blutspende.ch/de/spenderinfos/warum-blut-spenden/blutgruppenbarometer`
 rk.geneve.lbl               = "SRK 🇨🇭 Genf"
-rk.srkgesamt={};
-rk.srkgesamt.url            = `https://www.blutspende.ch/de/spenderinfos/warum-blut-spenden/blutgruppenbarometer`
-rk.srkgesamt.lbl            = "SRK 🇨🇭 Schweiz Gesamt"
+rk.gesamt={};
+rk.gesamt.url               = `https://www.blutspende.ch/de/spenderinfos/warum-blut-spenden/blutgruppenbarometer`
+rk.gesamt.lbl               = "SRK 🇨🇭 Schweiz Gesamt"
 rk.graubuenden={};
 rk.graubuenden.url          = `https://www.blutspende.ch/de/spenderinfos/warum-blut-spenden/blutgruppenbarometer`
 rk.graubuenden.lbl          = "SRK 🇨🇭 Graub\u00fcnden"
@@ -216,7 +216,7 @@ function readParams () {
   let params = args.widgetParameter;
   // test data during editing
   if (!config.runsInWidget) {
-    params = "no";
+    params = "zentralschweiz";
   }
   return params;
 }
