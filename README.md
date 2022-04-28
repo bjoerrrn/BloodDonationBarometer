@@ -24,6 +24,7 @@ You need to choose one of the entities above; example: `parameter: no`
 
 # coming soon
 * Blutspende SRK Schweiz
+* proper formatting of status date
 
 ## contributing
 
