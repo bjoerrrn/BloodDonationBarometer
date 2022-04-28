@@ -16,9 +16,17 @@ The widget pulls data from one of the DRK website every 4-7 minutes. This is tri
 # usage
 The widget currently supports 3 regional German red cross entities: 
 ```
-no     DRK-Blutspendedienst Nord-Ost (Berlin, Brandenburg, Hamburg, Sachsen, Schleswig-Holstein)
-nstob  DRK-Blutspendedienst NSTOB (Niedersachsen, Sachsen-Anhalt, Thüringen, Oldenburg, Bremen) 
-bwh    DRK-Blutspendedienst Baden-Württemberg, Hessen
+## DRK-BLUTSPENDEDIENST
+
+# parameter   # description
+  no            Nord-Ost (Berlin, Brandenburg, Hamburg, Sachsen, Schleswig-Holstein)
+  nstob         NSTOB (Niedersachsen, Sachsen-Anhalt, Thüringen, Oldenburg, Bremen) 
+  bwh           Baden-Württemberg, Hessen
+  
+## SRK-BLUTSPENDEDIENST
+
+# parameter   # description
+  ...
 ```
 You need to choose one of the entities above; example: `parameter: no`
 
