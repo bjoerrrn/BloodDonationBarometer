@@ -26,6 +26,8 @@ You need to choose one of the entities above; example: `parameter: no`
 
 [issues](https://github.com/dusselmann/BloodDonationBarometer/issues) and [pull requests](https://github.com/dusselmann/BloodDonationBarometer/pulls) are welcome. for major changes, please open an [issue](https://github.com/dusselmann/BloodDonationBarometer/issues) first to discuss what you would like to change.
 
+if you want to contact me directly, feel free to do so via discord: https://discordapp.com/users/371404709262786561
+
 ## license
 
 [GPL-3.0](https://www.gnu.org/licenses/gpl-3.0.en.html)
