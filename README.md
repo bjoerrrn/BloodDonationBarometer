@@ -27,7 +27,7 @@ The widget currently supports 3 regional German red cross entities:
 
 # parameter         # description
   irb                 Interregional
-  aargau_solothurn    Aagrau - Solothurn
+  aargau_solothurn    Aargau-Solothurn
   basel               Basel
   fribourg            Freiburg
   geneve              Genf
