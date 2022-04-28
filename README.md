@@ -8,10 +8,19 @@ A <a href="https://scriptable.app">Scriptable</a> widget for iOS, which shows th
 
 The widget pulls data from one of the DRK website every 4-7 minutes. This is triggered by iOS and can not be changed. Currently the northwest from the DRK regions is supported - more to come. 
 
-# usage
+# setup
 1. Install <a href="https://scriptable.app">Scriptable</a> on your iPhone from the App Store.
 2. Download `bloodDonationBarometerWidget.js` from this repository.
 4. Import `bloodDonationBarometerWidget.js` in Scriptable.
+
+# usage
+The widget currently supports 3 regional German red cross entities: 
+```
+no     DRK-Blutspendedienst Nord-Ost (Berlin, Brandenburg, Hamburg, Sachsen, Schleswig-Holstein)
+nstob  DRK-Blutspendedienst NSTOB (Niedersachsen, Sachsen-Anhalt, Thüringen, Oldenburg, Bremen) 
+bwh    DRK-Blutspendedienst Baden-Württemberg, Hessen
+```
+You need to choose one of the entities above; example: `parameter: no`
 
 ## contributing
 
