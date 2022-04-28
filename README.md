@@ -31,7 +31,7 @@ The widget currently supports 3 regional German red cross entities:
   basel               Basel
   fribourg            Freiburg
   geneve              Genf
-  srkgesamt           Schweiz Gesamt
+  gesamt              Schweiz Gesamt
   graubuenden         Graubünden
   neuchatel_jura      Neuchâtel-Jura
   nordostschweiz      Nordostschweiz
