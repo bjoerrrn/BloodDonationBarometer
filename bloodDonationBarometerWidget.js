@@ -4,7 +4,7 @@
 
 // Licence: GPL-3.0 License https://github.com/bjoerrrn/BloodDonationBarometer/blob/main/LICENSE
 // Source: https://github.com/bjoerrrn/BloodDonationBarometer
-// Version: 0.1.5
+// Version: 0.1.6
 
 
 let rk={};
@@ -26,7 +26,7 @@ rk.irb.url                  = `https://www.blutspende.ch/de/spenderinfos/warum-b
 rk.irb.lbl                  = "SRK 🇨🇭 Interregional"
 rk.aargau_solothurn={};
 rk.aargau_solothurn.url     = `https://www.blutspende.ch/de/spenderinfos/warum-blut-spenden/blutgruppenbarometer`
-rk.aargau_solothurn.lbl     = "SRK 🇨🇭 Aargau-Solothurn"
+rk.aargau_solothurn.lbl     = "SRK 🇨🇭 Aagrau - Solothurn"
 rk.basel={};
 rk.basel.url                = `https://www.blutspende.ch/de/spenderinfos/warum-blut-spenden/blutgruppenbarometer`
 rk.basel.lbl                = "SRK 🇨🇭 Basel"
@@ -184,22 +184,22 @@ function drawText(text, fontSize, x, y, color = Color.white(), bold = false){
 
 function getSymbol(l,i){
     let symbols;
-    if (typeof i === 'string') {
-        symbols = {
-            "red":      function(){ return "🔥"; },
-            "yellow":   function(){ return "🩸"; },
-            "green":    function(){ return "🩸🩸"; },
-            "blue":     function(){ return "🩸🩸🩸"; },
-            "grey":     function(){ return "🩸🩸🩸🩸"; }
-        }
-        return symbols[i]();
-    } else if (l == "nstob") {
+    if (l == "nstob") {
         symbols = {
             0: function(){ return "🔥"; },
             1: function(){ return "🩸"; },
             2: function(){ return "🩸🩸"; },
             3: function(){ return "🩸🩸🩸"; },
             4: function(){ return "🩸🩸🩸🩸"; }
+        }
+        return symbols[i]();
+    } else if (typeof i === 'string') {
+        symbols = {
+            "red":      function(){ return "🔥"; },
+            "yellow":   function(){ return "🩸"; },
+            "green":    function(){ return "🩸🩸"; },
+            "blue":     function(){ return "🩸🩸🩸"; },
+            "grey":     function(){ return "🩸🩸🩸🩸"; }
         }
         return symbols[i]();
     } else {
@@ -216,7 +216,7 @@ function readParams () {
   let params = args.widgetParameter;
   // test data during editing
   if (!config.runsInWidget) {
-    params = "zentralschweiz";
+    params = "nstob";
   }
   return params;
 }
