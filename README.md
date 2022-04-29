@@ -42,7 +42,7 @@ The widget currently supports 3 regional German red cross entities:
 You need to choose one of the entities above; example: `parameter: irb`
 
 # coming soon
-* proper formatting of status date
+* reminder for next blood donation / countdown
 
 ## contributing
 
