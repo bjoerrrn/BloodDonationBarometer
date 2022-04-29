@@ -4,7 +4,7 @@
 
 // Licence: GPL-3.0 License https://github.com/bjoerrrn/BloodDonationBarometer/blob/main/LICENSE
 // Source: https://github.com/bjoerrrn/BloodDonationBarometer
-// Version: 0.1.6
+// Version: 0.1.7
 
 
 let rk={};
@@ -161,7 +161,7 @@ async function buildWidget() {
       drawText(getSymbol(loc,result.zero_neg),symbolSize, hortDefaultImage2, vertDefaultImage + 3 * vertDefaultPadding); 
       
       let tmpChanged = "Stand: ";
-      tmpChanged += result.changed;
+      tmpChanged += [result.changed.substring(8,10), result.changed.substring(5,7), result.changed.substring(0,4)].join('.');
       drawText(tmpChanged,15,35,vertDefaultLabel + 4 * vertDefaultPadding + 5);
 
     } catch (err) {
