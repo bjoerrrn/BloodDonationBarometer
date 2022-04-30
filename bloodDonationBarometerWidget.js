@@ -4,8 +4,7 @@
 
 // Licence: GPL-3.0 License https://github.com/bjoerrrn/BloodDonationBarometer/blob/main/LICENSE
 // Source: https://github.com/bjoerrrn/BloodDonationBarometer
-// Version: 0.1.7
-
+// Version: 0.1.8
 
 let rk={};
 
@@ -97,6 +96,9 @@ async function buildWidget() {
                
       // sub headlines
       drawText(rk[loc]["lbl"],15,35,75,Color.white(),true);
+      
+      // widget url
+      widget.url = rk[loc]["url"];
       
       // create request object to load data from html site
       let request = new Request(rk[loc]["url"])
