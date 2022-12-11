@@ -46,7 +46,7 @@ The widget currently supports 3 regional German red cross entities:
 You need to choose one of the entities above; example: `parameter: irb`
 
 # coming soon
-* reminder for next blood donation / countdown
+* Blutspendebarometer vom HAEMA Blut- und Plasmaspendedienst
 
 ## contributing
 
