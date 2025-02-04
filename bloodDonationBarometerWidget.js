@@ -1,230 +1,187 @@
 // Variables used by Scriptable.
-// These must be at the very top of the file. Do not edit.
+// These must be at the very top of the file. Do not edit:
 // icon-color: deep-gray; icon-glyph: magic;
 
 // Licence: GPL-3.0 License https://github.com/bjoerrrn/BloodDonationBarometer/blob/main/LICENSE
 // Source: https://github.com/bjoerrrn/BloodDonationBarometer
-// Version: 0.1.8
+// Version: 1.0.0
 
-let rk={};
+// Blood donation data sources categorized by organizations
+const rk = {
+  // Deutsches Rotes Kreuz (German Red Cross)
+  bwh: { url: "https://www.blutspende.de/startseite", lbl: "DRK 🇩🇪 Ba-Wü, Hessen" },
+  nstob: { url: "https://www.blutspende-leben.de/blut-spenden", lbl: "DRK 🇩🇪 NSTOB" },
+  no: { url: "https://www.blutspende-nordost.de", lbl: "DRK 🇩🇪 Nord-Ost" },
 
-// Deutsches Rotes Kreuz
-rk.bwh={};
-rk.bwh.url   = `https://www.blutspende.de/startseite`;
-rk.bwh.lbl   = "DRK 🇩🇪 Ba-W\u00fc, Hessen";
-rk.nstob={};
-rk.nstob.url = `https://www.blutspende-leben.de/blut-spenden`;
-rk.nstob.lbl = "DRK 🇩🇪 NSTOB";
-rk.no={};
-rk.no.url    = `https://www.blutspende-nordost.de`;
-rk.no.lbl    = "DRK 🇩🇪 Nord-Ost"
+  // Schweizerisches Rotes Kreuz (Swiss Red Cross)
+  irb: { api: "interregional", lbl: "SRK 🇨🇭 Interregional" },
+  aargau_solothurn: { api: "aargau_solothurn", lbl: "SRK 🇨🇭 Aargau - Solothurn" },
+  basel: { api: "basel", lbl: "SRK 🇨🇭 Basel" },
+  fribourg: { api: "fribourg", lbl: "SRK 🇨🇭 Freiburg" },
+  geneve: { api: "geneve", lbl: "SRK 🇨🇭 Genf" },
+  gesamt: { api: "schweiz_gesamt", lbl: "SRK 🇨🇭 Schweiz Gesamt" },
+  graubuenden: { api: "graubuenden", lbl: "SRK 🇨🇭 Graubünden" },
+  neuchatel_jura: { api: "neuchatel_jura", lbl: "SRK 🇨🇭 Neuchâtel-Jura" },
+  nordostschweiz: { api: "nordostschweiz", lbl: "SRK 🇨🇭 Nordostschweiz" },
+  svizzera_italiana: { api: "svizzera_italiana", lbl: "SRK 🇨🇭 Svizzera italiana" },
+  zentralschweiz: { api: "zentralschweiz", lbl: "SRK 🇨🇭 Zentralschweiz" },
+  zuerich: { api: "zuerich", lbl: "SRK 🇨🇭 Zürich" }
+};
 
-// Schweizerisches Rotes Kreuz
-rk.irb={};
-rk.irb.url                  = `https://www.blutspende.ch/de/spenderinfos/warum-blut-spenden/blutgruppenbarometer`
-rk.irb.lbl                  = "SRK 🇨🇭 Interregional"
-rk.aargau_solothurn={};
-rk.aargau_solothurn.url     = `https://www.blutspende.ch/de/spenderinfos/warum-blut-spenden/blutgruppenbarometer`
-rk.aargau_solothurn.lbl     = "SRK 🇨🇭 Aagrau - Solothurn"
-rk.basel={};
-rk.basel.url                = `https://www.blutspende.ch/de/spenderinfos/warum-blut-spenden/blutgruppenbarometer`
-rk.basel.lbl                = "SRK 🇨🇭 Basel"
-rk.fribourg={};
-rk.fribourg.url             = `https://www.blutspende.ch/de/spenderinfos/warum-blut-spenden/blutgruppenbarometer`
-rk.fribourg.lbl             = "SRK 🇨🇭 Freiburg"
-rk.geneve={};
-rk.geneve.url               = `https://www.blutspende.ch/de/spenderinfos/warum-blut-spenden/blutgruppenbarometer`
-rk.geneve.lbl               = "SRK 🇨🇭 Genf"
-rk.gesamt={};
-rk.gesamt.url               = `https://www.blutspende.ch/de/spenderinfos/warum-blut-spenden/blutgruppenbarometer`
-rk.gesamt.lbl               = "SRK 🇨🇭 Schweiz Gesamt"
-rk.graubuenden={};
-rk.graubuenden.url          = `https://www.blutspende.ch/de/spenderinfos/warum-blut-spenden/blutgruppenbarometer`
-rk.graubuenden.lbl          = "SRK 🇨🇭 Graub\u00fcnden"
-rk.neuchatel_jura={};
-rk.neuchatel_jura.url       = `https://www.blutspende.ch/de/spenderinfos/warum-blut-spenden/blutgruppenbarometer`
-rk.neuchatel_jura.lbl       = "SRK 🇨🇭 Neuch\u00e2tel-Jura"
-rk.nordostschweiz={};
-rk.nordostschweiz.url       = `https://www.blutspende.ch/de/spenderinfos/warum-blut-spenden/blutgruppenbarometer`
-rk.nordostschweiz.lbl       = "SRK 🇨🇭 Nordostschweiz"
-rk.svizzera_italiana={};
-rk.svizzera_italiana.url    = `https://www.blutspende.ch/de/spenderinfos/warum-blut-spenden/blutgruppenbarometer`
-rk.svizzera_italiana.lbl    = "SRK 🇨🇭 Svizzera italiana"
-rk.zentralschweiz={};
-rk.zentralschweiz.url       = `https://www.blutspende.ch/de/spenderinfos/warum-blut-spenden/blutgruppenbarometer`
-rk.zentralschweiz.lbl       = "SRK 🇨🇭 Zentralschweiz"
-rk.zuerich={};
-rk.zuerich.url              = `https://www.blutspende.ch/de/spenderinfos/warum-blut-spenden/blutgruppenbarometer`
-rk.zuerich.lbl              = "SRK 🇨🇭 Z\u00fcrich"
-
-
-// configure variables and setup widget
+// Widget Configuration
 const backgroundColor = new Color("#000", 1);
-const vertDefaultPadding = 30;
-const vertDefaultImage = 110;
-const vertDefaultLabel = vertDefaultImage - 5;
-const hortDefaultImage1 = 75;
-const hortDefaultImage2 = 190;
-const symbolSize = 11;
 const widget = new ListWidget();
 widget.setPadding(0, 0, 0, 0);
 widget.backgroundColor = backgroundColor;
-const contextSize = 282
-let drawContext = new DrawContext();
-drawContext.size = new Size(contextSize, contextSize)
-drawContext.opaque = false
-drawContext.setTextAlignedCenter()
-let loc = "";
 
+// Drawing Configuration
+const contextSize = 282;
+const drawContext = new DrawContext();
+drawContext.size = new Size(contextSize, contextSize);
+drawContext.opaque = false;
+drawContext.setTextAlignedCenter();
 
+// Layout Configuration
+const vertPadding = 30;
+const vertLabel = 110;
+const hortImage1 = 78;
+const hortImage2 = 193;
+const symbolSize = 11;
+
+// Define drawText()
+function drawText(text, fontSize, x, y, color = Color.white(), bold = false) {
+  drawContext.setFont(bold ? Font.boldSystemFont(fontSize) : Font.systemFont(fontSize));
+  drawContext.setTextColor(color);
+  drawContext.drawText(text.toString(), new Point(x, y));
+}
+
+// `nstob` Labels & Extraction
+async function extractBloodData(payload) {
+  const scriptMatch = payload.match(/<script[^>]+data-drupal-selector="drupal-settings-json"[^>]*>(.*?)<\/script>/s);
+  if (!scriptMatch) throw new Error("Could not find JSON data.");
+
+  const rawJsonString = scriptMatch[1].replace(/&quot;/g, '"').replace(/&amp;/g, '&');
+  const jsonData = JSON.parse(rawJsonString);
+
+  if (!jsonData.blutgruppen) throw new Error("No blood data found.");
+
+  const bloodData = jsonData.blutgruppen.default || jsonData.blutgruppen;
+  console.log("✅ Extracted Blood Data:", bloodData);
+  return bloodData;
+}
+
+// Swiss Red Cross API extraction
+async function fetchSwissBloodData(institute) {
+  const url = `https://www.blutspende.ch/api/blood_supplies/${institute}?locale=de`;
+  const request = new Request(url);
+  
+  try {
+    const jsonData = await request.loadJSON();
+    console.log(`✅ Full API Response for ${institute}:`, jsonData); 
+
+    if (!jsonData || !jsonData.blood_supplies) {
+      console.log(`⚠️ No data available for ${institute}`);
+      return null;
+    }
+    
+    return jsonData.blood_supplies;
+
+  } catch (error) {
+    console.log(`❌ API Error for ${institute}:`, error);
+    return null;
+  }
+}
+
+// Symbol mapping (Swiss API & Numeric)
+function getSymbol(loc, i) {
+  if (i === undefined || i === null) {
+    console.log(`⚠️ Missing Data for ${loc}`);
+    return "?";
+  }
+
+  console.log(`🔍 Processing ${loc}: ${i}`);
+
+  if (loc === "nstob") {
+    return ["🔥", "🩸", "🩸🩸", "🩸🩸🩸", "🩸🩸🩸🩸"][i] || "?";
+  }
+
+  const symbols = {
+    "red": "🔥",
+    "yellow": "🩸",
+    "green": "🩸🩸",
+    "blue": "🩸🩸🩸",
+    "grey": "🩸🩸🩸🩸"
+  };
+
+  if (typeof i === "string" && symbols[i]) return symbols[i];
+
+  // Numeric Mapping for `no`, `bwh`
+  const value = Number(i);
+  if (!isNaN(value)) {
+    if (value <= 15) return "🔥";  
+    if (value <= 25) return "🩸";  
+    if (value <= 50) return "🩸🩸";  
+    if (value <= 75) return "🩸🩸🩸";  
+    return "🩸🩸🩸🩸";  
+  }
+
+  return "?";
+}
+
+// buildWidget
 async function buildWidget() {
+  drawText("🩸 Barometer", 25, 35, 25, Color.red(), true);
 
-    // main headline
-    drawText("🩸 Barometer",25,35,25,Color.red(),true);
+  let loc;
+  try { loc = readParams(); } catch (err) {
+    console.log("❌ Error reading location:", err);
+    drawText("Bitte Standort angeben.", 20, 35, vertLabel, Color.yellow());
+    return;
+  }
 
-    try {
-      loc = readParams();
-      loc.toString();
-    } 
-    catch (err) {
-      log(err);
-      drawText("pls specify location",20,35,vertDefaultLabel,Color.yellow());
+  try {
+    drawText(rk[loc].lbl, 15, 35, 75, Color.white(), true);
+    widget.url = rk[loc].url;
+
+    let obj;
+    if (rk[loc].api) {
+      obj = await fetchSwissBloodData(rk[loc].api);
+    } else {
+      const request = new Request(rk[loc].url);
+      const payload = await request.loadString();
+      obj = await extractBloodData(payload);
+    }
+
+    if (!obj) {
+      console.log(`⚠️ No valid data for ${loc}`);
+      drawText("Keine Daten verfügbar.", 15, 35, vertLabel, Color.yellow());
       return;
     }
 
-    try {
-               
-      // sub headlines
-      drawText(rk[loc]["lbl"],15,35,75,Color.white(),true);
-      
-      // widget url
-      widget.url = rk[loc]["url"];
-      
-      // create request object to load data from html site
-      let request = new Request(rk[loc]["url"])
-      let payload = await request.loadString()
-      
-      // extract the json from html string with blood group data
-      const jsonString = payload.substring(
-        payload.indexOf(">{") + 1, 
-        payload.lastIndexOf("}}<") + 2
-      );
-      
-      // parse json data from string into js variables
-      let obj=JSON.parse(jsonString).blutgruppen;
-      let result={};
-      
-      // as rk provides data differently, distinguish between solutions
-      if (loc == "nstob") { 
-          tmpObj=obj.default;
-      } else {
-          tmpObj=obj;
-      }
-      
-      if (tmpObj.blood_barometer_a_plus != null) { // verify if object exists
-          result.a_plus     = tmpObj.blood_barometer_a_plus;
-          result.b_plus     = tmpObj.blood_barometer_b_plus;
-          result.ab_plus    = tmpObj.blood_barometer_ab_plus;
-          result.zero_plus  = tmpObj.blood_barometer_zero_plus;
-          result.a_neg      = tmpObj.blood_barometer_a_neg;
-          result.b_neg      = tmpObj.blood_barometer_b_neg;
-          result.ab_neg     = tmpObj.blood_barometer_ab_neg;
-          result.zero_neg   = tmpObj.blood_barometer_zero_neg;
-          result.changed    = obj.blood_barometer_changed;
-          
-      } else if (tmpObj[loc]["a+"] != null) { // verify if object exists
-          result.a_plus     = tmpObj[loc]["a+"];
-          result.b_plus     = tmpObj[loc]["b+"];
-          result.ab_plus    = tmpObj[loc]["ab+"];
-          result.zero_plus  = tmpObj[loc]["0+"];
-          result.a_neg      = tmpObj[loc]["a-"];
-          result.b_neg      = tmpObj[loc]["b-"];
-          result.ab_neg     = tmpObj[loc]["ab-"];
-          result.zero_neg   = tmpObj[loc]["0-"];
-          result.changed    = obj.blood_barometer_changed;
-      }
-      
-      // draw blood reserves and labels
-      drawText("A+",20,35,vertDefaultLabel);
-      drawText(getSymbol(loc,result.a_plus),symbolSize, hortDefaultImage1, vertDefaultImage); 
-      drawText("B+",20,35,vertDefaultLabel + vertDefaultPadding);
-      drawText(getSymbol(loc,result.b_plus),symbolSize, hortDefaultImage1, vertDefaultImage + vertDefaultPadding); 
-      drawText("AB+",20,35,vertDefaultLabel + 2 * vertDefaultPadding);
-      drawText(getSymbol(loc,result.ab_plus),symbolSize, hortDefaultImage1, vertDefaultImage + 2 * vertDefaultPadding); 
-      drawText("0+",20,35,vertDefaultLabel + 3 * vertDefaultPadding);
-      drawText(getSymbol(loc,result.zero_plus),symbolSize, hortDefaultImage1, vertDefaultImage + 3 * vertDefaultPadding); 
-      drawText("A-",20,150,vertDefaultLabel);
-      drawText(getSymbol(loc,result.a_neg),symbolSize, hortDefaultImage2, vertDefaultImage); 
-      drawText("B-",20,150,vertDefaultLabel + vertDefaultPadding);
-      drawText(getSymbol(loc,result.b_neg),symbolSize, hortDefaultImage2, vertDefaultImage + vertDefaultPadding); 
-      drawText("AB-",20,150,vertDefaultLabel + 2 * vertDefaultPadding);
-      drawText(getSymbol(loc,result.ab_neg),symbolSize, hortDefaultImage2, vertDefaultImage + 2 * vertDefaultPadding); 
-      drawText("0-",20,150,vertDefaultLabel + 3 * vertDefaultPadding);
-      drawText(getSymbol(loc,result.zero_neg),symbolSize, hortDefaultImage2, vertDefaultImage + 3 * vertDefaultPadding); 
-      
-      let tmpChanged = "Stand: ";
-      tmpChanged += [result.changed.substring(8,10), result.changed.substring(5,7), result.changed.substring(0,4)].join('.');
-      drawText(tmpChanged,15,35,vertDefaultLabel + 4 * vertDefaultPadding + 5);
+    console.log(`✅ Data Loaded for ${loc}`, obj);
 
-    } catch (err) {
-      log(err)
-      drawText("Reading remote",20,35,vertDefaultLabel,Color.yellow());
-      drawText("data failed...",20,35,vertDefaultLabel + vertDefaultPadding,Color.yellow());
-    }
-}
+    const labels = ["A+", "B+", "AB+", "0+", "A-", "B-", "AB-", "0-"];
+    const keys = Object.keys(obj);
 
+    labels.forEach((label, index) => {
+      const x = index < 4 ? 35 : 150;
+      const y = vertLabel + (index % 4) * vertPadding;
+      const value = obj[keys[index]] || "?";
 
-function drawText(text, fontSize, x, y, color = Color.white(), bold = false){
-  if (bold) { 
-    drawContext.setFont(Font.boldSystemFont(fontSize)); 
-  } else { 
-    drawContext.setFont(Font.systemFont(fontSize));
+      drawText(label, 20, x, y);
+      drawText(getSymbol(loc, value), symbolSize, index < 4 ? hortImage1 : hortImage2, y + vertPadding - 26);
+    });
+
+    drawText(`Stand: ${new Date().toLocaleDateString("de-DE")}`, 15, 35, vertLabel + 4 * vertPadding + 5);
+  } catch (err) {
+    console.log(`❌ Error loading data for ${loc}:`, err);
+    drawText("Remote Daten nicht lesbar.", 20, 35, vertLabel, Color.yellow());
   }
-  drawContext.setTextColor(color);
-  drawContext.drawText(new String(text).toString(), new Point(x, y));
 }
 
-function getSymbol(l,i){
-    let symbols;
-    if (l == "nstob") {
-        symbols = {
-            0: function(){ return "🔥"; },
-            1: function(){ return "🩸"; },
-            2: function(){ return "🩸🩸"; },
-            3: function(){ return "🩸🩸🩸"; },
-            4: function(){ return "🩸🩸🩸🩸"; }
-        }
-        return symbols[i]();
-    } else if (typeof i === 'string') {
-        symbols = {
-            "red":      function(){ return "🔥"; },
-            "yellow":   function(){ return "🩸"; },
-            "green":    function(){ return "🩸🩸"; },
-            "blue":     function(){ return "🩸🩸🩸"; },
-            "grey":     function(){ return "🩸🩸🩸🩸"; }
-        }
-        return symbols[i]();
-    } else {
-        if      (i <=  15){ return "🔥"; }
-        else if (i <=  25){ return "🩸"; }
-        else if (i <=  50){ return "🩸🩸"; }
-        else if (i <=  75){ return "🩸🩸🩸"; }
-        else if (i <= 100){ return "🩸🩸🩸🩸"; }
-    } 
-    return "?";
-}
-
-function readParams () {
-  let params = args.widgetParameter;
-  // test data during editing
-  if (!config.runsInWidget) {
-    params = "nstob";
-  }
-  return params;
-}
-
+// Run the script
 await buildWidget();
-widget.backgroundImage = (drawContext.getImage())
+widget.backgroundImage = drawContext.getImage();
 Script.setWidget(widget);
 Script.complete();
 widget.presentSmall();
