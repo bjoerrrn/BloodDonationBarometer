@@ -14,12 +14,12 @@ const rk = {
   no: { url: "https://www.blutspende-nordost.de", lbl: "DRK 🇩🇪 Nord-Ost" },
 
   // Schweizerisches Rotes Kreuz (Swiss Red Cross)
-  irb: { api: "interregional", lbl: "SRK 🇨🇭 Interregional" },
+  irb: { api: "interregional", lbl: "SRK 🇨🇭 Interregional" }, // no data available
   aargau_solothurn: { api: "aargau_solothurn", lbl: "SRK 🇨🇭 Aargau - Solothurn" },
   basel: { api: "basel", lbl: "SRK 🇨🇭 Basel" },
   fribourg: { api: "fribourg", lbl: "SRK 🇨🇭 Freiburg" },
   geneve: { api: "geneve", lbl: "SRK 🇨🇭 Genf" },
-  gesamt: { api: "schweiz_gesamt", lbl: "SRK 🇨🇭 Schweiz Gesamt" },
+  gesamt: { api: "schweiz_gesamt", lbl: "SRK 🇨🇭 Schweiz Gesamt" }, // no data available
   graubuenden: { api: "graubuenden", lbl: "SRK 🇨🇭 Graubünden" },
   neuchatel_jura: { api: "neuchatel_jura", lbl: "SRK 🇨🇭 Neuchâtel-Jura" },
   nordostschweiz: { api: "nordostschweiz", lbl: "SRK 🇨🇭 Nordostschweiz" },
