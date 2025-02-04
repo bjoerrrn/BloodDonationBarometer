@@ -26,12 +26,12 @@ The widget currently supports 3 regional German red cross entities:
 🇨🇭 SRK-BLUTSPENDEDIENST 
 
 # parameter         # description
-  irb                 Interregional
+  irb                 Interregional  // aktuell keine Daten verfügbar
   aargau_solothurn    Aargau-Solothurn
   basel               Basel
   fribourg            Freiburg
   geneve              Genf
-  gesamt              Schweiz Gesamt
+  gesamt              Schweiz Gesamt  // aktuell keine Daten verfügbar
   graubuenden         Graubünden
   neuchatel_jura      Neuchâtel-Jura
   nordostschweiz      Nordostschweiz
@@ -40,9 +40,6 @@ The widget currently supports 3 regional German red cross entities:
   zuerich             Zürich
 ```
 You need to choose one of the entities above; example: `parameter: irb`
-
-# coming soon
-* Blutspendebarometer vom HAEMA Blut- und Plasmaspendedienst
 
 ## contributing
 
